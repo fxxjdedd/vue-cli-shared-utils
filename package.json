@@ -1,0 +1,50 @@
+{
+  "name": "vue-cli-hared-utils",
+  "version": "0.0.6",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "commit": "git cz",
+    "cov": "echo missing coverage",
+    "newbranch": "npx git newbranch"
+  },
+  "dependencies": {
+    "javascript-stringify": "^2.0.1",
+    "lodash.merge": "^4.6.2",
+    "recast": "^0.19.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.0",
+    "jest": "^26.0.1",
+    "lint-staged": "^10.2.10",
+    "prettier": "^2.0.5",
+    "yorkie": "^2.0.0"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": false,
+    "singleQuote": true,
+    "jsxSingleQuote": false,
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "jsxBracketSameLine": false,
+    "arrowParens": "avoid"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/__tests__/**/*.spec.js"
+    ]
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run test",
+      "git add ."
+    ]
+  }
+}
